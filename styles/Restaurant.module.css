@@ -1,0 +1,26 @@
+.node{
+    font-size: 20px;
+    flex-direction: row;
+    display: flex;
+    margin: 2px 2px 2px 2px;
+}
+
+.node *{
+
+}
+
+.node_dong{
+
+}
+
+.node_name{
+
+}
+
+.node_location{
+
+}
+
+.node_call{
+
+}
