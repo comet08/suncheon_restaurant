@@ -1,0 +1,34 @@
+{
+  "name": "suncheon_restaurant",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "netlify-deploy": "next build && next export"
+  },
+  "dependencies": {
+    "@shopify/draggable": "^1.0.0-beta.8",
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "interactjs": "^1.10.11",
+    "next": "11.0.1",
+    "next-redux-wrapper": "^7.0.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "typescript-react-draggable": "^1.0.0"
+  },
+  "devDependencies": {
+    "@interactjs/types": "^1.10.11",
+    "@svgr/webpack": "^5.5.0",
+    "@types/react": "17.0.14",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "typescript": "4.3.5"
+  }
+}
