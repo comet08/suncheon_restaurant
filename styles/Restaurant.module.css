@@ -1,26 +1,39 @@
-.node{
-    font-size: 20px;
-    flex-direction: row;
-    display: flex;
-    margin: 2px 2px 2px 2px;
+.node {
+  font-size: 20px;
+  flex-direction: row;
+  display: flex;
+  margin: 2px 2px 2px 2px;
+  justify-content: space-between;
+  border-bottom: black 2px solid;
 }
 
-.node *{
-
+.node_dong {
+  margin-right: 10px;
 }
 
-.node_dong{
-
+.node_name {
+  margin-right: 10px;
+  width: 20%;
 }
 
-.node_name{
-
+.node_location {
+  margin-right: 10px;
+  width: 40%;
 }
 
-.node_location{
-
+.node_call {
+  margin-right: 10px;
 }
 
-.node_call{
-
+@media screen and (max-width: 800px) {
+  .node {
+    font-size: 13px;
+    margin: 1px 1px 1px 1px;
+  }
+  .node_dong,
+  .node_location,
+  .node_name,
+  .node_call {
+    margin-right: 5px;
+  }
 }

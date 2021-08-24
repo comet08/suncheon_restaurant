@@ -27,8 +27,6 @@
     "@interactjs/types": "^1.10.11",
     "@svgr/webpack": "^5.5.0",
     "@types/react": "17.0.14",
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1",
     "typescript": "4.3.5"
   }
 }
