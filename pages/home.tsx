@@ -1,7 +1,9 @@
 import styles from '../styles/Home.module.css';
 import { request } from './api/suncheon';
 import react, { useEffect, useState } from 'react';
-import Restaurant from './restaurant';
+import Restaurant from './sub/Restaurant';
+
+import Menu from './menu';
 
 const Home = () => {
   const [list, setList] = useState<Object>({});
@@ -41,6 +43,7 @@ const Home = () => {
     return (
       <div className={styles.home_container}>
         <div className={styles.title}> 순천 </div>
+        <Menu />
         {dongList.length ? (
           <>
             <div className={styles.Nav}>
