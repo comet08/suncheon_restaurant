@@ -1,21 +1,21 @@
 .container {
-  width : 100%;
+  width: 100%;
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  max-width: 900px;
 }
 
-.home_container{
+.home_container {
   padding-top: 20px;
-  max-width: 1200px;
-  width : 80%;
-  display : flex;
+
+  width: 80%;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .main {
@@ -43,10 +43,11 @@
   flex-grow: 1;
 }
 
-.title{
+.title {
   margin-top: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  cursor : pointer
+  cursor: pointer;
+  font-size: 5px;
 }
 
 .title a {
@@ -58,12 +59,6 @@
 .title a:focus,
 .title a:active {
   text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 50px;
 }
 
 .title,
@@ -81,8 +76,7 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
@@ -129,47 +123,74 @@
   margin-left: 0.5rem;
 }
 
-
-.dongButton{
+.dongButton {
   background-color: black;
-  color : white;
+  color: white;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 100;
-  margin : 3px 3px 3px 1px;
-
+  margin: 3px 3px 3px 1px;
 }
 
-.Nav{
-  position : absolute;
-  right : 10px;
-  top : 100px;
-  width : 300px;
-  display : inline-block;
-  background-color: rgb(225, 246, 255);
-  border : black 2px dashed;
+.Nav {
+  position: absolute;
+  right: 10px;
+  top: 100px;
+  width: 300px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: black 2px solid;
   border-radius: 5px;
-  padding : 0.5%;
+  padding: 0.5%;
   text-align: center;
+  min-width: 155px;
+  min-height: auto;
 }
 
-
-.contents{
-  width : 100%;
+.contents {
+  width: 100%;
 }
 
-.maps{
+.dong {
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.maps {
   background-color: rgb(234, 242, 253);
-  margin-top: 20px; 
+  margin-top: 20px;
   margin-bottom: 50px;
-  width : auto;
+  width: auto;
 }
 
-@media screen and (max-width:800px) {
-  .dongButton{
-    font-size : 15px;
+.Navi {
+  width: 100%;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  background-color: rgba(130, 209, 255, 0.6);
+}
+
+.Navi_link {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+.Navi_link:hover {
+  color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .dongButton {
+    font-size: 15px;
   }
-  .Nav{
-    width : 150px;
+  .Nav {
+    width: 150px;
   }
 }

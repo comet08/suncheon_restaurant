@@ -1,9 +1,13 @@
 import styles from '../styles/Home.module.css';
 import { request } from './api/suncheon';
 import react, { useEffect, useState } from 'react';
+import Image from 'next/image';
+
 import Restaurant from './sub/Restaurant';
 
 import Menu from './menu';
+
+import logo from '/public/imgs/newlogo.png';
 
 const Home = () => {
   const [list, setList] = useState<Object>({});
@@ -42,7 +46,9 @@ const Home = () => {
   } else
     return (
       <div className={styles.home_container}>
-        <div className={styles.title}> 순천 </div>
+        <div className="title" onClick={() => Router.push('/')}>
+          <Image src={logo} alt="logo" width="400" height="100" />
+        </div>
         <Menu />
         {dongList.length ? (
           <>
