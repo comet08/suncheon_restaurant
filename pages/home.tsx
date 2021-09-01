@@ -8,6 +8,7 @@ import Restaurant from './sub/Restaurant';
 import Menu from './menu';
 
 import logo from '/public/imgs/newlogo.png';
+import Notice from './sub/Notice';
 
 const Home = () => {
   const [list, setList] = useState<Object>({});
@@ -46,6 +47,7 @@ const Home = () => {
   } else
     return (
       <div className={styles.home_container}>
+        <Notice />
         <div className="title" onClick={() => Router.push('/')}>
           <Image src={logo} alt="logo" width="400" height="100" />
         </div>

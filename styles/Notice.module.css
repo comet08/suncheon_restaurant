@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    height: 20px;
+  }
+  .notice {
+    animation-name: notice;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: normal;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  @keyframes notice {
+    from {
+      margin-left: 0%;
+    }
+    to {
+      margin-left: 100%;
+    }
+  }
+  
+  @keyframes slide {
+    75% {
+      color: rgb(15, 455, 255);
+    }
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+  
