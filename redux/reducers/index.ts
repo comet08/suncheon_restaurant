@@ -6,8 +6,8 @@ import reload from './reload'
 
 export interface reduxState{
     rlist : {
-        list : keys,
-        savedList : listObj
+        list : keys, // Object : Object의 형태
+        savedList : listObj // Object : Array의 형태
     },
 }
 
