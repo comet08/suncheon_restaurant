@@ -1,18 +1,21 @@
 import { combineReducers } from 'redux';
 import { keys, listObj } from '../../pages/api/InterfaceAndType';
 import rlist from './rlist';
-import reload from './reload'
-
+import user from './user'
 
 export interface reduxState{
     rlist : {
-        list : keys, // Object : Object의 형태
-        savedList : listObj // Object : Array의 형태
+        list : keys,
+        savedList : listObj,
     },
+    user : {
+        userState : any
+    }
 }
 
 const rootReducer = combineReducers({
     rlist,
+    user
 })
 
 export default rootReducer;
