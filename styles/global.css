@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  width : 100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 a {
@@ -11,12 +11,144 @@ a {
   text-decoration: none;
 }
 
-footer{
-  text-align: center;
-  display : flex;
-  flex-direction: column;
+footer {
+  display: block;
+  height: 20px;
+  position: fixed;
+  bottom: 0px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.svg {
+  display: inline-block;
+  width: 400px;
+}
+
+.hidden {
+  display: none;
+}
+
+.cursor {
+  position: absolute;
+  background-color: rgb(225, 246, 255);
+  font-family: sans-serif;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 8px 10px 8px 10px;
+  font-weight: 800;
+}
+
+.center {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgb(159, 132, 199);
+  color: white;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+#__next {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.node:hover,
+path:hover {
+  background-color: rgba(123, 112, 224, 0.2);
+  fill: rgb(147, 186, 218);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  max-width: 900px;
+}
+
+.contents {
+  padding-top: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+
+.Navi {
+  text-align: center;
+  width: 100%;
+  background-color: rgb(147, 186, 218);
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 5px;
+}
+
+.Navi_link {
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+  margin-right: 20px;
+  cursor : pointer;
+}
+
+.Navi_link:hover {
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .svg {
+    width: 300px;
+  }
+  .logo {
+    width: 300px;
+    height: 70px;
+  }
+  .Nav {
+    width: 150px;
+  }
+
+  .Navi_link {
+    font-size: 13px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .svg {
+    width: 250px;
+  }
 }
