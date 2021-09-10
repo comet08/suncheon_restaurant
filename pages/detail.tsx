@@ -24,7 +24,6 @@ const Detail: React.FunctionComponent = () => {
 
   useEffect(() => {
     let query: queryObj = router.query;
-
     if (query['name'] && query['dong']) {
       let name: string = String(query.name);
       let dong: string = String(query.dong);
@@ -38,20 +37,21 @@ const Detail: React.FunctionComponent = () => {
   if (resObj)
     return (
       <div className="container">
-      <div className="contents">
-        <div className="title" onClick={() => Router.push('/')}>
-          <Image className="logo" src={logo} alt="logo" width="400" height="100" />
-        </div>
-        <div className={styles.detail}>
-          <div className={styles.detail_desc}>
-            <div className={styles.detail_name}>{resObj['업  소  명']}</div>
-            <div className={styles.detail_location}>{resObj['소  재  지']}</div>
-            <div className={styles.detail_call}>T. {resObj['전화번호']}</div>
+        <div className="contents">
+          <div className="title" onClick={() => Router.push('/')}>
+            <Image className="logo" src={logo} alt="logo" width="400" height="100" />
           </div>
+          <div className={styles.detail}>
+            <div className={styles.detail_desc}>
+              <div className={styles.detail_name}>{resObj['업  소  명']}</div>
+              <div className={styles.detail_location}>{resObj['소  재  지']}</div>
+              <div className={styles.detail_call}>T. {resObj['전화번호']}</div>
+            </div>
 
-          <DetailMap location={resObj['소  재  지']} name={resObj['업  소  명']} />
+            <DetailMap location={resObj['소  재  지']} name={resObj['업  소  명']} />
+          </div>
+          {router.query.name && <ReviewList store={router.query.name} />}
         </div>
-      </div>
       </div>
     );
   else return <div className="container"> Loading ... </div>;
