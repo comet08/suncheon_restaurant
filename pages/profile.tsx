@@ -3,9 +3,15 @@ import Image from 'next/image';
 import router, { useRouter } from 'next/router';
 import logo from '../public/imgs/newlogo.png';
 import styles from '../styles/Profile.module.css';
+
+import { updateProfile   } from 'firebase/auth';
+import { authService, dbService } from '../public/firebase/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { reduxState } from '../redux/reducers';
 import Menu from './menu';
+import { useEffect } from 'react';
+import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import Review, { ReviewProp } from './sub/Review';
 
 const types=["로그인", "회원가입"];
 
@@ -17,7 +23,48 @@ const Profile = () => {
   const Router = useRouter();
   const user = useSelector((state:reduxState)=>state.user.userState);
   const [name, setName] = useState<string | null>(null);
+  const [reviews, setReviews] = useState<myReview|null>(null);
 
+  const onSubmit = async(e:any)=>{
+      e.preventDefault();
+    if(authService.currentUser && name)
+        updateProfile(authService.currentUser, {
+            displayName : name
+        }).then(()=>{
+            window.alert("업데이트 완료!")
+        })
+    
+  }
+
+  const onChange = (e:any)=>{
+      const {name, value} = e.target;
+      if(name==="name") setName(value);
+  }
+
+  const getReviews = async () =>{
+    if(!user) return;
+    const q = await query(collection(dbService, 'Review'), where("uid", "==", user.uid), orderBy("store"), orderBy("createdAt", "desc"));
+    
+    const snapshot = await onSnapshot(q, (querySnapshot)=>{
+      let reviewObj : myReview= {};
+  
+      querySnapshot.forEach((doc: any) => {
+        const data = doc.data();
+        if(!reviewObj[data.store]) reviewObj[data.store] = [];
+        reviewObj[data.store].push({
+        id: doc.id,
+        ...data,
+        });
+      });
+      setReviews(reviewObj);
+    });
+  }
+
+  useEffect(()=>{
+    if(!user) Router.push('/');
+    getReviews();
+  }, []);
+  
   return (
       <div className="container">
     <div className="contents">
@@ -31,6 +78,21 @@ const Profile = () => {
           <button className={styles.button} type="submit">등록</button>
           </form>
       </div>
+      {
+        reviews && 
+        Object.entries(reviews).map(([key, value]) =>
+          {
+            return(
+              <div id={styles.reviews} key={key}>
+              <div className={styles.review}> 
+              {key}
+              </div>
+              {value.map((r)=><Review key={r.id} uid={r.uid} id={r.id} store={r.store} name={r.name} comment={r.comment} createdAt={r.createdAt} isOwner={r.uid===user.uid}/>)
+           } </div>
+            )
+          }
+        )
+      }
     </div>
     </div>
   );

@@ -1,7 +1,15 @@
-html,
-body {
+:root {
+  --origin-color: 207;
+}
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -33,7 +41,7 @@ footer {
 
 .cursor {
   position: absolute;
-  background-color: rgb(225, 246, 255);
+  background-color: hsl(var(--origin-color), 49%, 90%);
   font-family: sans-serif;
   font-size: 20px;
   border-radius: 10px;
@@ -66,7 +74,7 @@ footer {
 .node:hover,
 path:hover {
   background-color: rgba(123, 112, 224, 0.2);
-  fill: rgb(147, 186, 218);
+  fill: hsl(var(--origin-color), 80%, 65%);
 }
 
 .container {
@@ -78,6 +86,7 @@ path:hover {
   align-items: center;
   height: 100vh;
   max-width: 900px;
+  min-width: 350;
 }
 
 .contents {
@@ -87,7 +96,6 @@ path:hover {
   flex-direction: column;
   align-items: center;
 }
-
 
 .title {
   margin-top: 20px;
@@ -102,11 +110,10 @@ path:hover {
   text-decoration: none;
 }
 
-
 .Navi {
   text-align: center;
   width: 100%;
-  background-color: rgb(147, 186, 218);
+  background-color: hsl(var(--origin-color), 49%, 72%);
 
   padding-top: 10px;
   padding-bottom: 10px;
@@ -122,23 +129,30 @@ path:hover {
   font-size: 17px;
   font-weight: bold;
   margin-right: 20px;
-  cursor : pointer;
+  cursor: pointer;
 }
 
 .Navi_link:hover {
   color: white;
 }
 
-@media screen and (max-width: 700px) {
+.Loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: progress;
+}
+
+@media screen and (max-width: 450px) {
   .svg {
     width: 300px;
   }
   .logo {
     width: 300px;
     height: 70px;
-  }
-  .Nav {
-    width: 150px;
   }
 
   .Navi_link {

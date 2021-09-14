@@ -8,12 +8,12 @@
 }
 
 .node_dong {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .node_name {
-  margin-right: 10px;
-  width: 20%;
+  margin-right: 5px;
+  width: 25%;
 }
 
 .node_location {
@@ -22,7 +22,7 @@
 }
 
 .node_call {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 @media screen and (max-width: 800px) {
@@ -36,4 +36,7 @@
   .node_call {
     margin-right: 5px;
   }
+}
+
+@media screen and (max-width: 800px) {
 }

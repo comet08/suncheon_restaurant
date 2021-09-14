@@ -1,17 +1,19 @@
-#title{
+#title {
   font-size: 20px;
   margin-bottom: 50px;
   font-weight: bold;
 }
 
-#form{
+/* <====== Login Input ======> */
+
+#form {
   justify-content: center;
-  display : flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.input{
+.input {
   font-size: 40px;
   text-align: center;
   margin-bottom: 20px;
@@ -19,36 +21,41 @@
   border-width: 1px;
 }
 
-.input:focus{
+.input:focus {
   background-color: rgba(143, 219, 238, 0.1);
 }
 
-#button{
+#button {
   font-size: 25px;
-  background-color: rgb(147, 186, 218);
+  background-color: hsl(var(--origin-color), 47%, 72%);
   font-weight: bold;
   border-radius: 10px;
   padding: 10px 0px 10px 0px;
   border-width: 0px;
-  cursor : pointer;
-
+  cursor: pointer;
 }
 
-#change{
+#button:hover {
+  background-color: hsl(var(--origin-color), 47%, 52%);
+  color: white;
+}
+
+#change {
   font-size: 20px;
   margin-top: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
-@media screen and (max-width : 700px){
-  .input{
+@media screen and (max-width: 700px) {
+  .input {
     font-size: 20px;
   }
-  #button{
-    padding : 5px 0 5px 0;
+  #button {
+    padding: 5px 0 5px 0;
     font-size: 20px;
   }
-  #change{
+  #change {
     font-size: 17px;
   }
 }
