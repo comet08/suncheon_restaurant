@@ -10,6 +10,7 @@ import { useRouter } from 'next/dist/client/router';
 import { RestaurantObj } from './api/InterfaceAndType';
 import DetailMap from './maps/detailMap';
 import ReviewList from './sub/ReviewList';
+import { reduxState } from '../redux/reducers/index';
 
 interface queryObj {
   [key: string]: string | string[] | undefined;
@@ -20,7 +21,7 @@ const Detail: React.FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const [resObj, setResObj] = useState<RestaurantObj | null>(null);
-  let list = useSelector((state: any) => state.rlist.list);
+  let list = useSelector((state: reduxState) => state.rlist.list);
 
   useEffect(() => {
     let query: queryObj = router.query;
