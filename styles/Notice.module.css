@@ -9,7 +9,7 @@
   position : absolute;
   animation-name: notice;
   animation-iteration-count: infinite;
-  animation-duration: 20s;
+  animation-duration: 15s;
   animation-direction: normal;
   height: 20px;
   margin-left: 90%;
@@ -18,9 +18,15 @@
 
 @keyframes notice {
   from {
-    margin-left: 90%;
+    margin-left: 85%;
   }
   to {
     margin-left: -90%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .container{
+    visibility :hidden;
   }
 }

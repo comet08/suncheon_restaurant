@@ -66,34 +66,34 @@ const Profile = () => {
   }, []);
   
   return (
-      <div className="container">
-    <div className="contents">
-      <div className="title" onClick={() => Router.push('/')}>
-        <Image className="logo" src={logo} alt="logo" width="400" height="100" />
+    <div className="container">
+      <div className="contents">
+        <div className="title" onClick={() => Router.push('/')}>
+          <Image className="logo" src={logo} alt="logo" width="400" height="100" />
+        </div>
+        <Menu />
+        <div id={styles.profile}>
+            <form id={styles.form} onSubmit={onSubmit}>
+            <input className={styles.input} type="text" name="name" onChange={onChange} placeholder={user.displayName? user.displayName : "닉네임을 설정해주세요!"}/>
+            <button className={styles.button} type="submit">등록</button>
+            </form>
+        </div>
+        {
+          reviews && 
+          Object.entries(reviews).map(([key, value]) =>
+            {
+              return(
+                <div id={styles.reviews} key={key}>
+                <div className={styles.review}> 
+                {key}
+                </div>
+                {value.map((r)=><Review key={r.id} uid={r.uid} id={r.id} store={r.store} name={r.name} comment={r.comment} createdAt={r.createdAt} isOwner={r.uid===user.uid}/>)
+            } </div>
+              )
+            }
+          )
+        }
       </div>
-      <Menu />
-      <div id={styles.profile}>
-          <form id={styles.form} onSubmit={onSubmit}>
-          <input className={styles.input} type="text" name="name" onChange={onChange} placeholder={user.displayName? user.displayName : "닉네임을 설정해주세요!"}/>
-          <button className={styles.button} type="submit">등록</button>
-          </form>
-      </div>
-      {
-        reviews && 
-        Object.entries(reviews).map(([key, value]) =>
-          {
-            return(
-              <div id={styles.reviews} key={key}>
-              <div className={styles.review}> 
-              {key}
-              </div>
-              {value.map((r)=><Review key={r.id} uid={r.uid} id={r.id} store={r.store} name={r.name} comment={r.comment} createdAt={r.createdAt} isOwner={r.uid===user.uid}/>)
-           } </div>
-            )
-          }
-        )
-      }
-    </div>
     </div>
   );
 };
