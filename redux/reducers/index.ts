@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { keys, listObj } from '../../pages/api/InterfaceAndType';
+import { keys, listObj } from '../api/InterfaceAndType';
 import rlist from './rlist';
 import user from './user'
 

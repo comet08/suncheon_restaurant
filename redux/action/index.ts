@@ -2,8 +2,8 @@ const GET_LIST = 'GET_LIST';
 const SAVE_SELECTED = 'SAVE_SELECTED'
 const FETCH_USER = 'FETCH_USER'
 
-import { RestaurantObj, InitRestaurant } from '../../pages/api/InterfaceAndType';
-import { request } from '../../pages/api/suncheon';
+import { RestaurantObj, InitRestaurant } from '../api/InterfaceAndType';
+import { request } from '../api/suncheon';
 
 
 export const getList = ()=>{ 

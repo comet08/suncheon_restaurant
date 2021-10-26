@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/Notice.module.css';
+import styles from '../styles/Notice.module.css';
 
 const Notice = () => {
   return (

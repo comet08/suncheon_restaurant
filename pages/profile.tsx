@@ -8,10 +8,9 @@ import { updateProfile   } from 'firebase/auth';
 import { authService, dbService } from '../public/firebase/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { reduxState } from '../redux/reducers';
-import Menu from './menu';
+import Menu from '../sub/menu';
 import { useEffect } from 'react';
 import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore';
-import Review, { ReviewProp } from './sub/Review';
 
 const types=["로그인", "회원가입"];
 
@@ -78,21 +77,7 @@ const Profile = () => {
             <button className={styles.button} type="submit">등록</button>
             </form>
         </div>
-        {
-          reviews && 
-          Object.entries(reviews).map(([key, value]) =>
-            {
-              return(
-                <div id={styles.reviews} key={key}>
-                <div className={styles.review}> 
-                {key}
-                </div>
-                {value.map((r)=><Review key={r.id} uid={r.uid} id={r.id} store={r.store} name={r.name} comment={r.comment} createdAt={r.createdAt} isOwner={r.uid===user.uid}/>)
-            } </div>
-              )
-            }
-          )
-        }
+
       </div>
     </div>
   );

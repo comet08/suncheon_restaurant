@@ -7,9 +7,8 @@ import logo from '../public/imgs/newlogo.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/dist/client/router';
 
-import { RestaurantObj } from './api/InterfaceAndType';
-import DetailMap from './maps/detailMap';
-import ReviewList from './sub/ReviewList';
+import { RestaurantObj } from '../api/InterfaceAndType';
+import DetailMap from '../maps/detailMap';
 import { reduxState } from '../redux/reducers/index';
 
 interface queryObj {

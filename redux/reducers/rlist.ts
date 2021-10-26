@@ -1,4 +1,4 @@
-import { listObj, keys } from "../../pages/api/InterfaceAndType";
+import { listObj, keys } from "../api/InterfaceAndType";
 
 const GET_LIST = 'GET_LIST';
 const SAVE_SELECTED = 'SAVE_SELECTED'

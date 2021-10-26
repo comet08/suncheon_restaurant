@@ -1,4 +1,4 @@
-import styles from '../../styles/Restaurant.module.css';
+import styles from '../styles/Restaurant.module.css';
 import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';

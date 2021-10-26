@@ -1,18 +1,18 @@
 import styles from '../styles/Home.module.css';
-import { request } from './api/suncheon';
+import { request } from '../api/suncheon';
 import react, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import Restaurant from './sub/Restaurant';
+import Restaurant from '../sub/Restaurant';
 
-import Menu from './menu';
+import Menu from '../sub/menu';
 
-import Map1 from './maps/map1';
-import Map2 from './maps/map2';
-import Map3 from './maps/map3';
+import Map1 from '../maps/map1';
+import Map2 from '../maps/map2';
+import Map3 from '../maps/map3';
 
-import logo from '/public/imgs/newlogo.png';
-import Notice from './sub/Notice';
+import logo from '../public/imgs/newlogo.png';
+import Notice from '../sub/Notice';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getList } from '../redux/action';

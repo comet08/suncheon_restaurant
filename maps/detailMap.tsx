@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from '../../styles/Detail.module.css';
+import styles from '../styles/Detail.module.css';
 interface mapObj {
   location: string;
   name: string;
